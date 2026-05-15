@@ -1,0 +1,104 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #050a10; /* Deep dark blue */
+  color: #fff;
+  padding: 40px 20px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+#options-container {
+  background: rgba(10, 15, 20, 0.95);
+  border-radius: 16px;
+  padding: 30px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.15);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  height: fit-content;
+}
+
+h1 {
+  font-size: 1.8em;
+  text-align: center;
+  color: #00ffff;
+  margin-bottom: 25px;
+  letter-spacing: 2px;
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+  text-transform: uppercase;
+}
+
+.setting {
+  margin-bottom: 20px;
+}
+
+.setting label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.95em;
+  color: #00ffff;
+}
+
+.setting input,
+.setting select {
+  width: 100%;
+  padding: 12px;
+  font-size: 1em;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  background-color: rgba(0, 10, 20, 0.8);
+  color: #fff;
+  transition:
+    border 0.3s,
+    box-shadow 0.3s;
+  outline: none;
+}
+
+.setting input:focus,
+.setting select:focus {
+  border-color: #00ffff;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+.button-container {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+button {
+  flex: 1;
+  padding: 12px;
+  font-size: 1em;
+  background: linear-gradient(90deg, #00ffff, #00ff88);
+  color: #000;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+button:hover {
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+#status {
+  text-align: center;
+  color: #00ffff;
+  font-size: 0.9em;
+  margin-top: 15px;
+  height: 20px;
+}

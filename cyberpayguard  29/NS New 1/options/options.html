@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CYBERPAYGUARD Settings</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <div id="options-container">
+      <h1>CYBERPAYGUARD Settings</h1>
+      <form id="settings-form">
+        <div class="setting">
+          <label for="timeout">Session Timeout (seconds):</label>
+          <input
+            type="number"
+            id="lock_after_idle_seconds"
+            name="lock_after_idle_seconds"
+            min="15"
+            max="1209600"
+            value="30"
+          />
+        </div>
+
+        <div class="setting">
+          <label for="2fa-method">2FA Method:</label>
+          <select
+            id="2fa-method"
+            name="2fa-method"
+            style="
+              width: 100%;
+              padding: 12px;
+              font-size: 1em;
+              border-radius: 8px;
+              border: 1px solid #333;
+              background-color: #1a1a1a;
+              color: #fff;
+            "
+          >
+            <option value="email">Email OTP</option>
+            <option value="totp">Authenticator App (TOTP)</option>
+          </select>
+        </div>
+
+        <!-- Email Settings -->
+        <div id="email-settings">
+          <div class="setting">
+            <label for="email1">Primary Email Address:</label>
+            <input
+              type="email"
+              id="email1"
+              name="email1"
+              placeholder="you@example.com"
+            />
+          </div>
+
+          <div class="setting">
+            <label for="email2">Secondary Email (Optional):</label>
+            <input
+              type="email"
+              id="email2"
+              name="email2"
+              placeholder="partner@example.com"
+            />
+          </div>
+        </div>
+
+        <!-- TOTP Settings -->
+        <div id="totp-settings" style="display: none; text-align: center">
+          <p style="color: #aaa; font-size: 0.9em">
+            Click the button below to generate your QR Code for Google
+            Authenticator.
+          </p>
+          <button type="button" id="generate-qr" style="margin-bottom: 15px">
+            Generate QR Code
+          </button>
+          <div
+            id="qr-code-container"
+            style="
+              background: white;
+              padding: 15px;
+              border-radius: 8px;
+              display: none;
+              margin-top: 10px;
+            "
+          >
+            <!-- QR Code and Live OTP will appear here -->
+          </div>
+        </div>
+
+        <div class="button-container">
+          <button type="button" id="save">Save Settings</button>
+          <button type="button" id="defaults">Restore Defaults</button>
+        </div>
+
+        <div id="status"></div>
+      </form>
+    </div>
+
+    <!-- THESE ARE THE MAGIC SCRIPTS AT THE BOTTOM -->
+    <script src="../libs/totp-engine.js"></script>
+    <script src="../libs/qrcode.min.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CYBERPAYGUARD Status</title>
+    <link rel="stylesheet" href="popup.css" />
+    <!-- Added Orbitron for the Sci-Fi font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Orbitron:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="popup-container">
+      <h1>CyberPayGuard</h1>
+
+      <!-- Safety Score Section -->
+      <div class="score-container">
+        <div id="score-value">0%</div>
+        <div id="score-label">Analyzing Security...</div>
+        <div class="progress-container">
+          <div id="progress-bar"></div>
+        </div>
+      </div>
+
+      <!-- OTP Card -->
+      <div class="otp-card">
+        <span class="otp-label">Active 2FA Code</span>
+        <div id="otp-display">LOCKED</div>
+        <p
+          style="
+            font-size: 8px;
+            color: #444;
+            margin: 5px 0 0 0;
+            text-transform: uppercase;
+          "
+        >
+          Dynamic OTP
+        </p>
+      </div>
+
+      <!-- Status Information Cards -->
+      <div class="card">
+        <h2>Connection</h2>
+        <div class="card-data" id="connection-status">Loading...</div>
+      </div>
+
+      <div class="card">
+        <h2>Site Category</h2>
+        <div class="card-data" id="site-category">Loading...</div>
+      </div>
+
+      <div class="card">
+        <h2>2FA Method</h2>
+        <div class="card-data" id="2fa-method">Loading...</div>
+      </div>
+
+      <div class="card">
+        <h2>Session Timeout</h2>
+        <div class="card-data" id="session-timeout">Loading...</div>
+      </div>
+
+      <!-- UPGRADED BUTTON -->
+      <button id="settings-button">🛡️ SYSTEM CONFIG</button>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

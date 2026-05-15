@@ -1,0 +1,68 @@
+{
+  "manifest_version": 3,
+  "name": "CYBERPAYGUARD",
+  "description": "Protects users from phishing, malware, and secure transactions.",
+  "version": "1.0",
+  "permissions": [
+    "storage",
+    "webNavigation",
+    "scripting",
+    "notifications",
+    "alarms",
+    "activeTab",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://*.sampathvishwa.com/*",
+    "https://*.combank.lk/*",
+    "https://*.combankdigital.com/*",
+    "https://*.peoplesbank.lk/*",
+    "https://*.paypal.com/*",
+    "https://*.stripe.com/*",
+    "https://*.daraz.lk/*",
+    "https://*.daraz.pk/*",
+    "https://*.aliexpress.com/*",
+    "https://api.emailjs.com/*",
+    "http://*/*"  
+  ],
+  "background": {
+    "service_worker": "background/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.sampathvishwa.com/*",
+        "https://*.combank.lk/*",
+        "https://*.combankdigital.com/*",
+        "https://*.peoplesbank.lk/*",
+        "https://*.paypal.com/*",
+        "https://*.stripe.com/*",
+        "https://*.daraz.lk/*",
+        "https://*.daraz.pk/*",
+        "https://*.aliexpress.com/*",
+        "file://*/*"
+      ],
+      "js": [
+        "libs/totp-engine.js",
+        "libs/qrcode.min.js",
+        "content-scripts/antiCapture.js",
+        "content-scripts/content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "assets/icon16.png",
+      "48": "assets/icon48.png",
+      "128": "assets/icon128.png"
+    }
+  },
+  "options_page": "options/options.html",
+  "icons": {
+    "16": "assets/icon16.png",
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
+  }
+}
